@@ -9,12 +9,12 @@
 
 <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
   <div class="carousel-indicators">
-    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    {# <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button> #}
+    {# <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button> #}
+    {# <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button> #}
   </div>
   <div class="carousel-inner">
-    <div class="carousel-item active">
+    {# <div class="carousel-item ">
       <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
       <div class="container">
         <div class="carousel-caption text-start">
@@ -23,18 +23,18 @@
           <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
         </div>
       </div>
-    </div>
-    <div class="carousel-item">
-      <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
+    </div> #}
+    <div class="carousel-item active">
+      <img src="https://img.freepik.com/photos-gratuite/cool-figure-triangulaire-geometrique-dans-lumiere-laser-au-neon-ideal-pour-arriere-plans_181624-11068.jpg?t=st=1741957150~exp=1741960750~hmac=fbe9343e2ec633de26d5b38e80b256cd7c84ceb7af0ace90a90beb93590448c9&w=1380" alt="" width="100%" height="100%">
       <div class="container">
         <div class="carousel-caption">
-          <h1>Another example headline.</h1>
-          <p>Some representative placeholder content for the second slide of the carousel.</p>
-          <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
+          {# <h1>Another example headline.</h1>
+          <p>Some representative placeholder content for the second slide of the carousel.</p> #}
+          <p><a class="btn btn-lg btn-primary" href="{{ path('shop.index') }}">Voir les produits</a></p>
         </div>
       </div>
     </div>
-    <div class="carousel-item">
+    {# <div class="carousel-item">
       <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
       <div class="container">
         <div class="carousel-caption text-end">
@@ -43,16 +43,16 @@
           <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
         </div>
       </div>
-    </div>
+    </div> #}
   </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+  {# <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Previous</span>
   </button>
   <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
-  </button>
+  </button> #}
 </div>
 
 
@@ -65,20 +65,20 @@
   <!-- Three columns of text below the carousel -->
   <div class="row">
     <div class="col-lg-4">
-      <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
-      <h2 class="fw-normal">Heading</h2>
+      <img src="https://www.darty.com/assets/animco/9/9d30098e-dc6c-4167-98a8-57b7e4d211ef.png" alt="">
+      <h2 class="fw-normal">Informatique</h2>
       <p>Some representative placeholder content for the three columns of text below the carousel. This is the first column.</p>
       <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
     </div><!-- /.col-lg-4 -->
     <div class="col-lg-4">
-      <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
-      <h2 class="fw-normal">Heading</h2>
+      <img src="https://www.darty.com/assets/animco/6/6f7dc8ad-b36f-45c6-b9a2-9a382b31a2dd.png" alt="">
+      <h2 class="fw-normal">Téléphonie</h2>
       <p>Another exciting bit of representative placeholder content. This time, we've moved on to the second column.</p>
       <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
     </div><!-- /.col-lg-4 -->
     <div class="col-lg-4">
-      <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
-      <h2 class="fw-normal">Heading</h2>
+      <img src="https://www.darty.com/assets/animco/e/e69b9e2c-fd82-433a-bd13-7f1101703aa7.png" alt="" width="250px" >
+      <h2 class="fw-normal">Gaming</h2>
       <p>And lastly this, the third column of representative placeholder content.</p>
       <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
     </div><!-- /.col-lg-4 -->
@@ -127,5 +127,5 @@
 
   <!-- /END THE FEATURETTES -->
 
-</div><!-- /.container -->
+</main>
 {% endblock %}
