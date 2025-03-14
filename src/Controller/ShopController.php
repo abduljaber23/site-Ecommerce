@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Repository\ArticleRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
@@ -9,10 +10,14 @@ use Symfony\Component\Routing\Attribute\Route;
 final class ShopController extends AbstractController
 {
     #[Route('/', name: 'shop.index')]
-    public function index(): Response
+    public function index(ArticleRepository $articleRepository): Response
     {
+        $articles = $articleRepository->findAll();
+        
+
+        // dd($articles);
         return $this->render('shop/index.html.twig', [
-            'controller_name' => 'ShopController',
+            'articles' => $articles,
         ]);
     }
     #[Route('/produit', name: 'produit.shop')]

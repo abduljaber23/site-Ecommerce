@@ -14,11 +14,11 @@ final class ProductController extends AbstractController
     #[Route('/product', name: 'add-name')]
     public function createProduct(EntityManagerInterface $entityManager): Response
     {
-//         $product = new Article();
-// $product->setName('Xbox Series X');
-// $product->setPrix(499);
-// $product->setCategorie('gaming');
-// $product->setImage('https://www.xbox.com/fr-FR/consoles/xbox-series-x');
+        $product = new Article();
+$product->setName('Xbox Series X');
+$product->setPrix(499);
+$product->setCategorie('gaming');
+$product->setImage('https://www.xbox.com/fr-FR/consoles/xbox-series-x');
 
 
 
