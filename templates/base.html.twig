@@ -107,6 +107,51 @@
           .bd-mode-toggle .dropdown-menu .active .bi {
             display: block !important;
           }
+        footer{
+          position: fixed;
+         left: 0;
+         bottom: 0;
+         right: 0;
+         background-color: #212529;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+        }
+        .m{
+          margin-top: 1em;
+          text-align: center;
+        }
+        .cate{
+        /*  text-decoration: none;*/
+          color: cyan;
+          border-radius: 50%;
+          font-size: 1rem;
+          text-decoration: none;
+        }
+        .titre{
+          font-size: 1.3rem;
+        }
+        .prix{
+          font-size: 1.3rem;
+          color: whitesmoke;
+          margin-top: 10px;
+        }
+        .bttn {
+          font-size: 17px;
+          padding: 0.5em 2em;
+          border: transparent;
+          box-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+          background: rgb(41, 63, 85);
+          color: white;
+          border-radius: 4px;
+          text-decoration: none;
+         }
+         
+         .bttn:hover {
+          background: rgb(2,0,36);
+          background: linear-gradient(90deg, rgba(30,144,255,1) 0%, rgba(0,212,255,1) 100%);
+         }
         </style>
         
     </head>
@@ -189,7 +234,7 @@
     </nav>
     </header>
   
-  
+    
       
  
     {% block body %}{% endblock %}

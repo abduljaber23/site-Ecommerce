@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ShopController!{% endblock %}
+
+{% block body %}
+
+{# {{ category.label }} #}
+{% for categorie in categorie %}
+<h1 class="card-title">{{categorie.label}}</h1>
+{% endfor %}
+
+
+{% endblock %}
