@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %} {% block title %}Hello AdminCategoryController!{%
+endblock %} {% block body %}
+
+
+
+  <div class="bt">  <a class="btn btn-primary" href="{{ path('add_cate') }}">ajouter</a></div>
+<div class="tab">
+<table>
+    <tr>
+        <th class="td" colspan="4">
+            Categorie
+        </th>
+    </tr>
+    {% for cate in category %}
+    <tr>
+        <td class="td">
+            <p>{{ cate.label }}</p>
+        </td>
+        <td class="td">
+            
+            <a href="{{ path('show_cate', { id: cate.id }) }}">Voir</a>
+        </td>
+        <td class="td" >
+            <a href="{{ path('remove_cate', { id: cate.id }) }}"><i class="fa-solid fa-trash red"></i></a>
+            
+        </td>
+        <td class="td">
+            <a href="{{ path('edit_cate', { id: cate.id }) }}"><i class="fa-solid fa-pen-to-square blu"></i></a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+</div>
+
+{% endblock %}

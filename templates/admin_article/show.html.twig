@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %} {% block title %}Hello AdminCategoryController!{%
+    endblock %} {% block body %}
+    <div class="ti">
+      <div class="titre">
+        <h3>
+          {{ article.name }}
+        </h3>
+        <img src="{{ article.image }}" alt="" height="220px" width="250px">
+        <b>
+            {{ article.prix }} €
+          </b>
+      </div>
+      <div class="link">
+        <a href="{{ path('edit_article', { id: article.id }) }}"
+          ><i class="fa-solid fa-pen-to-square blu"></i
+        ></a>
+        <a href="{{ path('remove_article', { id: article.id }) }}"
+          ><i class="fa-solid fa-trash" id="red" ></i
+        ></a>
+      </div>
+    </div>
+    
+    {% endblock %}
+    

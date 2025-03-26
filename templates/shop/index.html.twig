@@ -22,10 +22,17 @@
               {% endfor %}
               
               <p class="prix">
-                {{article.prix}} €
+                {{article.prix|euro}} 
               </p>
               
               <a class="bttn" href="{{ path('detailid.shop', {'id' : article.id}) }}">Voir plus</a>
+{# 
+              {% if app.user and "ROLE_ADMIN" in app.user.roles %}
+              <div class="btnAdmin">
+                <a class="btn btn-primary s" href=" {{ path('edit_article' , {'id' : article.id})}} ">Modifier</a>
+                <a class="btn btn-danger s" href="{{ path('remove_article' , {'id' : article.id})}}">Supprimer</a>
+              </div>
+              {% endif %} #}
               
             </div>
           </div>

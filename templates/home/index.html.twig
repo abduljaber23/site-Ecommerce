@@ -28,6 +28,7 @@
       <img src="https://cdn.pixabay.com/photo/2023/02/08/08/50/frequency-wave-7776034_1280.jpg" alt="" width="100%" height="100%">
       <div class="container">
         <div class="carousel-caption">
+
           {# <h1>Another example headline.</h1>
           <p>Some representative placeholder content for the second slide of the carousel.</p> #}
           <p><a class="btn btn-lg btn-primary" href="{{ path('shop.index') }}">Voir les produits</a></p>
@@ -64,24 +65,14 @@
 
   <!-- Three columns of text below the carousel -->
   <div class="row">
+    {% for category in get_categories()|slice(0, 3) %}
     <div class="col-lg-4">
       <img src="https://www.darty.com/assets/animco/9/9d30098e-dc6c-4167-98a8-57b7e4d211ef.png" alt="">
-      <h2 class="fw-normal">Informatique</h2>
-      <p>Some representative placeholder content for the three columns of text below the carousel. This is the first column.</p>
-      <p><a class="btn btn-secondary" href="{{ path('categorie.shop' , {'id' : 1}) }}">View details &raquo;</a></p>
+      {# <h2 class="fw-normal">{{category.label}}</h2> #}
+      {# <p>Some representative placeholder content for the three columns of text below the carousel. This is the first column.</p> #}
+      <p><a class="btn btn-info" href="{{ path('categorie.shop' , {'id' : category.id}) }}">{{ category.label }}</a></p>
     </div><!-- /.col-lg-4 -->
-    <div class="col-lg-4">
-      <img src="https://www.darty.com/assets/animco/6/6f7dc8ad-b36f-45c6-b9a2-9a382b31a2dd.png" alt="">
-      <h2 class="fw-normal">Téléphonie</h2>
-      <p>Another exciting bit of representative placeholder content. This time, we've moved on to the second column.</p>
-      <p><a class="btn btn-secondary" href="{{ path('categorie.shop' , {'id' : 2}) }}">View details &raquo;</a></p>
-    </div><!-- /.col-lg-4 -->
-    <div class="col-lg-4">
-      <img src="https://www.darty.com/assets/animco/e/e69b9e2c-fd82-433a-bd13-7f1101703aa7.png" alt="" width="250px" >
-      <h2 class="fw-normal">Gaming</h2>
-      <p>And lastly this, the third column of representative placeholder content.</p>
-      <p><a class="btn btn-secondary" href="{{ path('categorie.shop' , {'id' : 3}) }}">View details &raquo;</a></p>
-    </div><!-- /.col-lg-4 -->
+    {% endfor %}
   </div><!-- /.row -->
 
 
@@ -98,6 +89,10 @@
       <img src="https://i0.wp.com/protection-hydrogel.fr/wp-content/uploads/2024/10/RedMagic-Nova.png?fit=1094%2C1094&ssl=1" alt="" width="300" height="500">
     </div>
   </div>
+ 
+  {{ 'now' | date('Y-m-d') }} 
+  {# {{ 'bonjour' | upper }} 
+  {{ 'Wôrķšƥáçè ~~sèťtïñğš~~'|slug }} #}
 
   <hr class="featurette-divider">
 

@@ -5,9 +5,45 @@
 {% block body %}
 
 {# {{ category.label }} #}
-{% for categorie in categorie %}
-<h1 class="card-title">{{categorie.label}}</h1>
-{% endfor %}
+{# {% for categorie in categorie %} #}
+{# <h1 class="card-title">{{categorie.label}}</h1> #}
+{# {{dump(categorie.articles)}} #}
+<div class="m">
 
+    <div class="container">
+      
+      <div class="row g-4">
+{% for article in categorie.articles %}
+<div class=" col-xl-3 col-lg-4 col-md-6">
+          
+    <div class="card">
+      <img src="{{article.image}}" class="card-img-top" alt="..." height="220px" >
+      <div class="card-body">
+        <p class="card-title titre">{{article.name}}</p>
+        
+        {% for category in article.categorie %}
+       <a class="cate" href="{{ path('categorie.shop' , {'id' : category.id}) }}">{{ category.label }}</a> 
+        {% endfor %}
+        
+        <p class="prix">
+          {{article.prix}} €
+        </p>
+        
+        <a class="bttn" href="{{ path('detailid.shop', {'id' : article.id}) }}">Voir plus</a>
+
+        {% if app.user and "ROLE_ADMIN" in app.user.roles %}
+        <div class="btnAdmin">
+          <a class="btn btn-primary s" href=" {{ path('edit_article' , {'id' : article.id})}} ">Modifier</a>
+          <a class="btn btn-danger s" href="{{ path('remove_article' , {'id' : article.id})}}">Supprimer</a>
+        </div>
+        {% endif %}
+        
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+</div>
+</div>
 
 {% endblock %}

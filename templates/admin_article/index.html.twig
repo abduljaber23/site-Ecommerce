@@ -1,0 +1,127 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AdminArticleController!{% endblock %}
+
+{% block body %}
+<div class="container">
+    {% include "partials/flash.html.twig" %} 
+</div>
+<div class="btn bt">
+    <a class="btn btn-primary" href="{{ path('add_article') }}">Ajouter</a>
+    
+</div>
+<div class="tab">
+    <table>
+        <tr>
+            <th class="td">
+                ID
+            </th>
+            <th class="td">
+                Articles
+            </th>
+            <th class="td">
+                Prix €
+            </th>
+            <th class="td">
+                Image
+            </th>
+            <th class="td">
+                Supprimer
+            </th>
+            <th class="td">
+                Modifier
+            </th>
+            <th class="td">
+                Afficher
+            </th>
+
+        </tr>
+        {% for item in article %}
+        <tr>
+            <td class="td">
+                <p>{{ item.id }}</p>
+            </td>
+            <td class="td">
+                <p>{{ item.name }}</p>
+            </td>
+            <td class="td">
+                <p>{{ item.prix }}</p>
+            </td>
+            <td class="td">
+                <img src="{{ item.image }}" alt="" width="250px" height="230px">
+            </td>
+
+{# 
+            <td class="td">
+            
+                <a href="{{ path('show_cate', { id: cate.id }) }}">Voir</a>
+            </td> #}
+            <td class="td" >
+                <!-- Button trigger modal -->
+                
+                {# <a  data-bs-toggle="modal" data-bs-target="#staticBackdrop" href="{{ path('remove_article', { id: item.id }) }}"><i class="fa-solid fa-trash red"></i></a> #}
+                
+                
+                <button class="btt"  data-bs-toggle="modal" data-bs-target="#test{{item.id}}">
+                    <i class="fa-solid fa-trash red"></i>
+                </button>
+
+    <div class="modal fade" id="test{{item.id}}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+              <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              Suprimer L'article
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <a class="btn btn-danger" id="btC" href="{{ path('remove_article', { id: item.id }) }}">Supprimer</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+                
+            </td>
+
+
+
+
+
+
+            <td class="td">
+                <a href="{{ path('edit_article', { id: item.id }) }}"><i class="fa-solid fa-pen-to-square blu"></i></a>
+            </td>
+            <td class="td">
+            
+                <a href="{{ path('show_article', { id: item.id }) }}"><i class="fa-solid fa-eye"></i></a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</div> 
+
+    {# <nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    <li class="page-item disabled">
+      <a class="page-link">Previous</a>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item">
+      <a class="page-link" href="#">Next</a>
+    </li>
+  </ul>
+</nav> #}
+
+
+<div class="navigation">
+  <button class="btn btn-success " >{{ knp_pagination_render(article) }}</button>  
+</div>
+
+{% endblock %}
